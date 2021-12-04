@@ -11,21 +11,17 @@ export default function Menu({navigation}) {
 
   const showAlert = () =>
   Alert.alert(
-    "Alert Title",
-    "My Alert Msg",
+    "Feature Not Available",
+    "Check back soon!",
     [
       {
-        text: "Cancel",
-        onPress: () => Alert.alert("Cancel Pressed"),
+        text: "Done",
+        
         style: "cancel",
       },
     ],
     {
       cancelable: true,
-      onDismiss: () =>
-        Alert.alert(
-          "This alert was dismissed by tapping outside of the alert dialog."
-        ),
     }
   );
 
@@ -42,23 +38,30 @@ export default function Menu({navigation}) {
               style={styles.menu, {alignContent: 'center', padding: 30, borderColor: "orange", borderWidth: 10}}
               onPress={() => navigation.navigate('RandomGenerator')}>
               <Text style = {styles.menuText}>
-                Random Nail Color Generator
+                Random Color Generator
               </Text>
             </TouchableOpacity>
         </View>
 
         <View style={styles.container, {backgroundColor: "white"}}>
-            <TouchableOpacity style={styles.menu, {alignContent: 'center', padding: 30, borderColor: "orangered", borderWidth: 10}}>
+            <TouchableOpacity 
+              style={styles.menu, {alignContent: 'center', padding: 30, borderColor: "orangered", borderWidth: 10}}
+              onPress={() => navigation.navigate('YourColors')}>
             <Text style = {styles.menuText}>
-                Mood Generator
+                Your Colors
               </Text>
+
+              
             </TouchableOpacity>
         </View>
 
         <View style={styles.container, {backgroundColor: "white"}}>
             <TouchableOpacity style={styles.menu, {alignContent: 'center', padding: 30, borderColor: "orange", borderWidth: 10}}>
-              <Text style = {styles.menuText}>
+              <Text style = {styles.menuText, {color: "orange", fontFamily: "Futura", textAlign: "center", fontSize: 20}}>
                 Color Match
+              </Text>
+              <Text style = {styles.menuText, {color: "grey", fontStyle: "italic", textAlign: "center"}}>
+                Coming Soon
               </Text>
             </TouchableOpacity>
         </View>
@@ -75,7 +78,10 @@ export default function Menu({navigation}) {
         <View style={styles.container, {backgroundColor: "white"}}>
             <TouchableOpacity style={styles.menu, {alignContent: 'center', padding: 30, borderColor: "orange", borderWidth: 10}}>
               <Text style = {styles.menuText}>
-                Saved Palletes
+                Mood Generator
+              </Text>
+              <Text style = {styles.menuText, {color: "grey", fontStyle: "italic", textAlign: "center"}}>
+                Coming Soon
               </Text>
             </TouchableOpacity>
         </View>

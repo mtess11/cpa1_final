@@ -12,6 +12,7 @@ import BrandScreen from './BrandScreen';
 import Menu from './Menu'
 import RandomGenerator from './RandomGenerator';
 import AllColors from './AllColors';
+import YourColors from './YourColors';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -28,6 +29,7 @@ export default function MainStackNavigator() {
         <Stack.Screen name="Menu" component={Menu} />
         <Stack.Screen name= "RandomGenerator" component = {RandomGenerator} />
         <Stack.Screen name= "AllColors" component = {AllColors} />
+        <Stack.Screen name= "YourColors" component = {YourColors} />
 
       </Stack.Navigator>
     </NavigationContainer>
