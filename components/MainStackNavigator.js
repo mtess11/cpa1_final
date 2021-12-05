@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image, StatusBar, Button} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import DrawerItems from './constants/DrawerItems';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Homepage from './Homepage'; 
 import About from './About'; 
@@ -15,24 +14,56 @@ import AllColors from './AllColors';
 import YourColors from './YourColors';
 
 const Stack = createNativeStackNavigator();
-const Drawer = createDrawerNavigator();
 
 
 export default function MainStackNavigator() {
   return (
     <NavigationContainer>
       
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Homepage} />
-        <Stack.Screen name="About" component={About} />
-        <Stack.Screen name="BrandScreen" component={BrandScreen} />
-        <Stack.Screen name="Menu" component={Menu} />
-        <Stack.Screen name= "RandomGenerator" component = {RandomGenerator} />
-        <Stack.Screen name= "AllColors" component = {AllColors} />
-        <Stack.Screen name= "YourColors" component = {YourColors} />
+      <Stack.Navigator initialRouteName="Home"
+        
+      >
+        <Stack.Screen name="Home" component={Homepage} options={{headerShown: false } }/>
+        <Stack.Screen name="About" component={About} options={{headerShown: true, headerTransparent: true,
+              headerBlurEffect: 'systemThickMaterialLight',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },} }/>
+        <Stack.Screen name="BrandScreen" component={BrandScreen} options={{headerShown: true, headerTransparent: true,
+              headerBlurEffect: 'systemThickMaterialLight',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },}}/>
+        <Stack.Screen name="Menu" component={Menu} options={{headerShown: false}}/>
+        <Stack.Screen name= "RandomGenerator" component = {RandomGenerator} options={{headerShown: true, headerTransparent: true,
+              headerBlurEffect: 'systemThickMaterialLight',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },}}/>
+        <Stack.Screen name= "AllColors" component = {AllColors} options={{headerShown: true, headerTransparent: true,
+              headerBlurEffect: 'systemThickMaterialLight',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },}}/>
+        <Stack.Screen 
+            name= "YourColors" 
+            component = {YourColors} 
+            options = {{
+              
+              headerTransparent: false,
+              headerBlurEffect: 'systemThickMaterialLight',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+            }
+            }
+            />
 
       </Stack.Navigator>
     </NavigationContainer>
+
+    
     
   );
+  
 }

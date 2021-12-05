@@ -49,7 +49,7 @@ export default function BrandScreen() {
       />
 
       <Card>
-        <View style={styles.menu, {borderRadius:'20'}}>
+        <View style={(styles.menu, {borderRadius:'20'})}>
 
           <Button
             title="Generate"

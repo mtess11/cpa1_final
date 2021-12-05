@@ -5,8 +5,10 @@ import { FlatList, ScrollView } from 'react-native-gesture-handler';
 import { Card } from 'react-native-paper';
 
 
+
 const { width } = Dimensions.get("window");
 export default function YourColors() {
+  
   const [text, onChangeText] = React.useState("Useless Text");
   const [brand, pickBrand] = React.useState(null);
   const [number, onChangeNumber] = React.useState(null);
@@ -39,6 +41,7 @@ const toggleModalVisibility = () => {
     }
   );
 
+  
 
     const DATA = []
 
@@ -50,35 +53,18 @@ const toggleModalVisibility = () => {
 
   const renderItem = ({ item }) => (
     <Item title = {item.title} />
-);
-
-fetchData() {
-    this.setState({ refreshing: true });
-    fetch('https://api.thecatapi.com/v1/images/search?limit=10&page=1')
-        .then(res => res.json())
-        .then(resJson => {
-            this.setState({ data: resJson });
-            this.setState({ refreshing: false });
-        }).catch(e => console.log(e));
-}
-
-handleRefresh = () => {
-    this.setState({ refreshing: false }, () => { this.fetchData() }); // call fetchCats after setting the state
-}
-
-  
+    )
 
   
     return (
-
-       
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'blue' }}>
+
         
-        <SafeAreaView style={styles.screen, {flex: 1, backgroundColor: "white", width: "80%"}}>
+        <SafeAreaView style={(styles.screen, {flex: 1, backgroundColor: "white", width: "80%"})}>
                 <StatusBar style="auto" />
     
                 {/**  We are going to create a Modal with Text Input. */}
-                <Button title="Add New Color" onPress={toggleModalVisibility} />
+              <Button title="Add New Color" onPress={toggleModalVisibility} style = {{fontFamily: 'Avenir Next'}} />
     
                 {/** This is our modal component containing textinput and a button */}
                 <Modal animationType="slide" 
@@ -87,7 +73,7 @@ handleRefresh = () => {
                     onRequestClose={() => { this.visibleModal(false); } }>
                     <View style={styles.viewWrapper}>
                         <View style={styles.modalView}>
-                            <Text style = {{fontSize: 20}}> 
+                            <Text style = {{fontSize: 20, fontFamily: 'Avenir Next'}}> 
                                 Add New Polish Color
                             </Text>
     
@@ -118,7 +104,7 @@ handleRefresh = () => {
                                     color = "darkblue"
                                     />
                                     <Button title = "Save"
-                                        
+                                        style = {{fontFamily: 'Avenir Next'}}
                                         color= "darkblue"
                                         onPress={toggleModalVisibility}
                                         />
@@ -137,7 +123,6 @@ handleRefresh = () => {
             </SafeAreaView>
 
         </View>
-
     );
     
   
@@ -186,9 +171,10 @@ modalView: {
     
     padding: 10,
     fontSize: 22,
-    fontWeight: 'bold',
+    fontWeight: 'normal',
+    fontFamily: 'Avenir Next',
     textAlign: 'center',
-    color: 'lightgrey'
+    color: 'black'
   }, 
   
 });

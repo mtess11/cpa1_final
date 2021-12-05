@@ -28,14 +28,14 @@ export default function Menu({navigation}) {
   return (
     <SafeAreaView style={{ flex: 1 , backgroundColor: 'blue'}} contentContainerStyle={{ flexGrow: 1 }}>
 
-      <View style = {styles.container, {padding: 20, paddingHorizontal: "10%"}}> 
-        <Text style = {{fontFamily: "Futura", textAlign: 'center', fontSize: 35, fontWeight: '100', color: 'white', backgroundColor: "orange"}}> Main Menu </Text>
+      <View style = {(styles.container, {padding: 20, paddingHorizontal: "10%"})}> 
+        <Text style = {{fontFamily: "Futura", textAlign: 'center', fontSize: 35, fontWeight: '100', color: 'white'}}> Main Menu </Text>
       </View>
 
       <ScrollView style = {{ paddingHorizontal: "10%", paddingTop: 10}}>
-        <View style={styles.container, {backgroundColor: "white"}}>
+        <View style={(styles.container, {backgroundColor: "white"})}>
             <TouchableOpacity 
-              style={styles.menu, {alignContent: 'center', padding: 30, borderColor: "orange", borderWidth: 10}}
+              style={(styles.menu, {alignContent: 'center', padding: 30, borderColor: "orange", borderWidth: 10})}
               onPress={() => navigation.navigate('RandomGenerator')}>
               <Text style = {styles.menuText}>
                 Random Color Generator
@@ -43,9 +43,9 @@ export default function Menu({navigation}) {
             </TouchableOpacity>
         </View>
 
-        <View style={styles.container, {backgroundColor: "white"}}>
+        <View style={(styles.container, {backgroundColor: "white"})}>
             <TouchableOpacity 
-              style={styles.menu, {alignContent: 'center', padding: 30, borderColor: "orangered", borderWidth: 10}}
+              style={(styles.menu, {alignContent: 'center', padding: 30, borderColor: "orangered", borderWidth: 10})}
               onPress={() => navigation.navigate('YourColors')}>
             <Text style = {styles.menuText}>
                 Your Colors
@@ -55,19 +55,19 @@ export default function Menu({navigation}) {
             </TouchableOpacity>
         </View>
 
-        <View style={styles.container, {backgroundColor: "white"}}>
-            <TouchableOpacity style={styles.menu, {alignContent: 'center', padding: 30, borderColor: "orange", borderWidth: 10}}>
-              <Text style = {styles.menuText, {color: "orange", fontFamily: "Futura", textAlign: "center", fontSize: 20}}>
+        <View style={(styles.container, {backgroundColor: "white"})}>
+            <TouchableOpacity style={(styles.menu, {alignContent: 'center', padding: 30, borderColor: "orange", borderWidth: 10})}>
+              <Text style = {(styles.menuText, {color: "orange", fontFamily: "Futura", textAlign: "center", fontSize: 20})}>
                 Color Match
               </Text>
-              <Text style = {styles.menuText, {color: "grey", fontStyle: "italic", textAlign: "center"}}>
+              <Text style = {(styles.menuText, {color: "grey", fontStyle: "italic", textAlign: "center"})}>
                 Coming Soon
               </Text>
             </TouchableOpacity>
         </View>
 
-        <View style={styles.container, {backgroundColor: "white"}}>
-            <TouchableOpacity style={styles.menu, {alignContent: 'center', padding: 30, borderColor: "orangered", borderWidth: 10}}
+        <View style={(styles.container, {backgroundColor: "white"})}>
+            <TouchableOpacity style={(styles.menu, {alignContent: 'center', padding: 30, borderColor: "orangered", borderWidth: 10})}
             onPress={() => navigation.navigate('AllColors')}>
               <Text style = {styles.menuText}>
               All Nail Colors
@@ -75,12 +75,12 @@ export default function Menu({navigation}) {
             </TouchableOpacity>
         </View>
 
-        <View style={styles.container, {backgroundColor: "white"}}>
-            <TouchableOpacity style={styles.menu, {alignContent: 'center', padding: 30, borderColor: "orange", borderWidth: 10}}>
+        <View style={(styles.container, {backgroundColor: "white"})}>
+            <TouchableOpacity style={(styles.menu, {alignContent: 'center', padding: 30, borderColor: "orange", borderWidth: 10})}>
               <Text style = {styles.menuText}>
                 Mood Generator
               </Text>
-              <Text style = {styles.menuText, {color: "grey", fontStyle: "italic", textAlign: "center"}}>
+              <Text style = {(styles.menuText, {color: "grey", fontStyle: "italic", textAlign: "center"})}>
                 Coming Soon
               </Text>
             </TouchableOpacity>
@@ -88,6 +88,11 @@ export default function Menu({navigation}) {
 
       </ScrollView>
     
+      <TouchableOpacity 
+        style = {(styles.container, {padding: 20, paddingHorizontal: "10%"})}
+        onPress={() => navigation.navigate('Home')}> 
+        <Text style = {{fontFamily: "Futura", textAlign: 'center', fontSize: 28, color: 'orange'}}> Log Out </Text>
+      </TouchableOpacity>
       
     </SafeAreaView>
   );
