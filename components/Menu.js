@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, Alert, View, StyleSheet, Image, StatusBar, Button, SafeAreaView, TextInput, SectionList} from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
-import { Card, List, Colors } from 'react-native-paper';
+// import { Card, List, Colors } from 'react-native-paper';
 
 
 export default function Menu({navigation}) {
@@ -47,7 +47,7 @@ export default function Menu({navigation}) {
             <TouchableOpacity 
               style={(styles.menu, {alignContent: 'center', padding: 30, borderColor: "orangered", borderWidth: 10})}
               onPress={() => navigation.navigate('YourColors')}>
-            <Text style = {styles.menuText}>
+            <Text style = {styles.menuText, {color: "orange", fontFamily: "Futura", textAlign: "center", fontSize: 20}}>
                 Your Colors
               </Text>
 
@@ -56,7 +56,19 @@ export default function Menu({navigation}) {
         </View>
 
         <View style={(styles.container, {backgroundColor: "white"})}>
-            <TouchableOpacity style={(styles.menu, {alignContent: 'center', padding: 30, borderColor: "orange", borderWidth: 10})}>
+            <TouchableOpacity style={(styles.menu, {alignContent: 'center', padding: 30, borderColor: "orange", borderWidth: 10}
+            )}
+            onPress={() => navigation.navigate('AllColors')}>
+              <Text style = {styles.menuText}>
+              Random Pallete Generator
+              </Text>
+            </TouchableOpacity>
+        </View>
+
+
+        <View style={(styles.container, {backgroundColor: "white"})}>
+            <TouchableOpacity onPress={() => navigation.navigate('Pomodoros')}
+            style={(styles.menu, {alignContent: 'center', padding: 30, borderColor: "orangered", borderWidth: 10})}>
               <Text style = {(styles.menuText, {color: "orange", fontFamily: "Futura", textAlign: "center", fontSize: 20})}>
                 Color Match
               </Text>
@@ -66,15 +78,7 @@ export default function Menu({navigation}) {
             </TouchableOpacity>
         </View>
 
-        <View style={(styles.container, {backgroundColor: "white"})}>
-            <TouchableOpacity style={(styles.menu, {alignContent: 'center', padding: 30, borderColor: "orangered", borderWidth: 10})}
-            onPress={() => navigation.navigate('AllColors')}>
-              <Text style = {styles.menuText}>
-              All Nail Colors
-              </Text>
-            </TouchableOpacity>
-        </View>
-
+        
         <View style={(styles.container, {backgroundColor: "white"})}>
             <TouchableOpacity style={(styles.menu, {alignContent: 'center', padding: 30, borderColor: "orange", borderWidth: 10})}>
               <Text style = {styles.menuText}>
