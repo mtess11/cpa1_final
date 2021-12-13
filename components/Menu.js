@@ -67,7 +67,8 @@ export default function Menu({navigation}) {
 
 
         <View style={(styles.container, {backgroundColor: "white"})}>
-            <TouchableOpacity onPress={() => navigation.navigate('Pomodoros')}
+            {/* <TouchableOpacity onPress={() => navigation.navigate('Pomodoros')} */}
+            <TouchableOpacity
             style={(styles.menu, {alignContent: 'center', padding: 30, borderColor: "orangered", borderWidth: 10})}>
               <Text style = {(styles.menuText, {color: "orange", fontFamily: "Futura", textAlign: "center", fontSize: 20})}>
                 Color Match

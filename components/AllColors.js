@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, FlatList } from 'react-native';
 import { useValue } from './ValueContext';
+import * as Clipboard from 'expo-clipboard';
 
 export default function AllColors() {
 
@@ -52,18 +53,23 @@ export default function AllColors() {
 
   var bg = generateColor();
 
+  const tempColors = [];
+
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'lavender' }}>
 
 
-      <View style={styles.container}>
+      {/* <View style={styles.container}> */}
         <FlatList
-          style={{ width: "100%", height: '100%'}}
+          // style={{ width: "100%", height: '100%'}}
+          style = {{flex: "1/9", width: "100%"}}
           data={DATA}
           renderItem={({ item }) => (
-            <View style={[styles.item, { backgroundColor: bg = generateColor(), width: '100%' , flex:1}]}>
+            <View style={[styles.item, { backgroundColor: bg = generateColor(), width: '100%'}]}>
               
-              <Text style={styles.title}>
+              <Text style={styles.title}
+                // onPress={() => Clipboard.setString(tempColors[{item}])}
+                >
                 {bg}
                 {item.backgroundColor}
               </Text>
@@ -71,7 +77,7 @@ export default function AllColors() {
           )}
           keyExtractor={item => item.id}
         />
-      </View>
+      {/* </View> */}
     </View>
   );
 }

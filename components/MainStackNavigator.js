@@ -24,7 +24,7 @@ export default function MainStackNavigator() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={Homepage} options={{ headerShown: false }} />
         <Stack.Screen name="About" component={About} options={{
-          headerShown: true, headerTransparent: true,
+          headerShown: true, headerTransparent: false,
           headerBlurEffect: 'systemThickMaterialLight',
           headerTitleStyle: {
             fontWeight: 'bold',
